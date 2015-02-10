@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>API proyectopintxopote by sheilapbi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>API proyectopintxopote</h1>
+        <p>API del Proyecto Pintxopote</p>
+
+        <p class="view"><a href="https://github.com/sheilapbi/api_proyectopintxopote">View the Project on GitHub <small>sheilapbi/api_proyectopintxopote</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/sheilapbi/api_proyectopintxopote/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sheilapbi/api_proyectopintxopote/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sheilapbi/api_proyectopintxopote">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="introducción" class="anchor" href="#introducci%C3%B3n" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introducción</h1>
+
+<p>Bienvenido a la sección de desarrolladores de 'The Pintxopo'. En ésta sección encontrarás la documentación necesaria para hacer uso de la API pública de nuestra aplicación. En resumen, te mostraremos como acceder a la información de los Pintxos y los Bares y obtenerla en forma de paquetes JSON.</p>
+
+<h1>
+<a id="información-de-los-recursos" class="anchor" href="#informaci%C3%B3n-de-los-recursos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Información de los recursos</h1>
+
+<p>Formato de respuesta: JSON</p>
+
+<p>Requiere estar logeado? No</p>
+
+<p>Uso límitado? No</p>
+
+<h1>
+<a id="pintxos" class="anchor" href="#pintxos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pintxos</h1>
+
+<p>Para obtener la información necesaria sobre los pintxos de la aplicación. Podrás obtner tanto la lista de pintxos, un pintxo por nombre como parámetro o el pintxo pasándole un número como parámetro que te devolverá el pintxo que corresponde en la lista.</p>
+
+<h2>
+<a id="get-pintxos" class="anchor" href="#get-pintxos" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET Pintxos</h2>
+
+<p>Para obtener la lista de los pintxos que hay en la base de datos usaremos la siguiente URL:</p>
+
+<p><a href="http://www.thepintxopo.com/pintxosDatos">http://www.thepintxopo.com/pintxosDatos</a></p>
+
+<p>Esto nos devolverá un array con un JSON en el que se incluyen los nombres y las descripciones de cada pintxo.</p>
+
+<p>Ejemplo:</p>
+
+<p>[{"nombre":"Maki de atún","descripcion":"Delicioso bocado de atún envuelto en arroz sushi-meshi y alga nori."},{"nombre":"Bola de carne","descripcion":"Uno de los pintxos más habituales, un bocado de carne con un toque picante"}]</p>
+
+<h2>
+<a id="get-pintxosnombre" class="anchor" href="#get-pintxosnombre" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET Pintxos:nombre</h2>
+
+<p>Para obtener un pintxo introduciendo su nombre usaremos la siguiente URL:</p>
+
+<p><a href="http://www.thepintxopo.com/pintxosDatos/nombre/:nombre">http://www.thepintxopo.com/pintxosDatos/nombre/:nombre</a></p>
+
+<p>Siendo /:nombre un parámetro que tendremos que introducir, ej: 'Maki de atún'. Esto nos devolverá un JSON en el que se incluyen el nombre y la descripción de ese pintxo.</p>
+
+<p>Ejemplo:</p>
+
+<p>{"nombre":"Maki de atún","descripcion":"Delicioso bocado de atún envuelto en arroz sushi-meshi y alga nori."}</p>
+
+<h2>
+<a id="get-pintxosnúmero" class="anchor" href="#get-pintxosn%C3%BAmero" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET Pintxos:número</h2>
+
+<p>Para obtener un pintxo introduciendo su número de orden usaremos la siguiente URL:</p>
+
+<p><a href="http://www.thepintxopo.com/pintxosDatos/:numero">http://www.thepintxopo.com/pintxosDatos/:numero</a></p>
+
+<p>Siendo /:numero un parámetro que tendremos que introducir, ej: '0'. Esto nos devolverá un JSON en el que se incluye el nombre de ese pintxo.</p>
+
+<p>Ejemplo:</p>
+
+<p>Maki de atún</p>
+
+<h1>
+<a id="bares" class="anchor" href="#bares" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bares</h1>
+
+<p>Para obtener la información necesaria sobre los bares de la aplicación. Podrás obtner tanto la lista de bares, un bar por nombre como parámetro o el bar pasándole un número como parámetro que te devolverá el bar que corresponde en la lista.</p>
+
+<h2>
+<a id="get-bares" class="anchor" href="#get-bares" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET Bares</h2>
+
+<p>Para obtener la lista de los bares que hay en la base de datos usaremos la siguiente URL:</p>
+
+<p><a href="http://www.thepintxopo.com/baresDatos">http://www.thepintxopo.com/baresDatos</a></p>
+
+<p>Esto nos devolverá un array con un JSON en el que se incluyen el nombre y las coordenadas de cada bar.</p>
+
+<p>Ejemplo:</p>
+
+<p>[{"coordX":"43.317020","coordY":"-1.971988","nombre":"Bar Jesús"},{"coordX":"43.326289","coordY":"-1.971695","nombre":"Elosta"}]</p>
+
+<h2>
+<a id="get-baresnombre" class="anchor" href="#get-baresnombre" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET Bares:nombre</h2>
+
+<p>Para obtener un bar introduciendo su nombre usaremos la siguiente URL:</p>
+
+<p><a href="http://www.thepintxopo.com/pintxosDatos/nombre/:nombre">http://www.thepintxopo.com/pintxosDatos/nombre/:nombre</a></p>
+
+<p>Siendo /:nombre un parámetro que tendremos que introducir, ej: 'Bar Jesús'. Esto nos devolverá un JSON en el que se incluyen el nombre y las coordenadas de ese bar.</p>
+
+<p>Ejemplo:</p>
+
+<p>{"coordX":"43.317020","coordY":"-1.971988","nombre":"Bar Jesús"}</p>
+
+<h2>
+<a id="get-baresnúmero" class="anchor" href="#get-baresn%C3%BAmero" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET Bares:número</h2>
+
+<p>Para obtener un bar introduciendo su número de orden usaremos la siguiente URL:</p>
+
+<p><a href="http://www.thepintxopo.com/pintxosDatos/:numero">http://www.thepintxopo.com/pintxosDatos/:numero</a></p>
+
+<p>Siendo /:numero un parámetro que tendremos que introducir, ej: '0'. Esto nos devolverá un JSON en el que se incluye el nombre de ese bar.</p>
+
+<p>Ejemplo:</p>
+
+<p>Bar Jesús</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/sheilapbi">sheilapbi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
